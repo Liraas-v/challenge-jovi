@@ -1,10 +1,15 @@
-# JoviLens — Orbital UI
+# ChallengeFiap — JoviLens
 
-App de câmera conceitual (UI) com seletor orbital de modos, assistente IA e modos Foto, Retrato, Doc, Vídeo, Cinema, Slow, Pano, QR, Traduzir, Objeto e Pro.
+App de câmera conceitual (UI) focado em estudantes, com:
+- interface minimalista e aparência de câmera real (inspirada em iOS/Android, mas com identidade própria);
+- assistente de IA que sugere modos (Retrato, Documento, Noturno, Tradução, etc.);
+- barra de modos horizontal arrastável (Foto, Retrato, Vídeo, Doc, Noite, Cinema, Slow, Pano, QR, Traduzir, Objeto, Pro);
+- legendas automáticas em vídeo (quando o navegador suporta Web Speech API);
+- modo Tradução com seletor de idioma de destino (ex.: EN, DE, ES, FR).
 
 ## Como abrir e rodar
 
-1. **Instalar dependências** (se ainda não instalou):
+1. **Instalar dependências** (na primeira vez):
    ```bash
    npm install
    ```
@@ -20,7 +25,7 @@ App de câmera conceitual (UI) com seletor orbital de modos, assistente IA e mod
    npm run build
    ```
 
-4. **Visualizar build de produção**:
+4. **Visualizar o build de produção**:
    ```bash
    npm run preview
    ```
@@ -30,23 +35,24 @@ App de câmera conceitual (UI) com seletor orbital de modos, assistente IA e mod
 ```
 src/
 ├── main.jsx              # Entrada: monta o app no #root
-├── App.jsx               # App principal JoviLens (estado e telas)
-├── index.css             # Estilos globais (body, #root)
+├── App.jsx               # App principal (estado e telas)
+├── index.css             # Estilos globais básicos
 ├── constants/
-│   └── theme.js          # INK, MODES, LANGUAGES, AI_RULES, etc.
+│   └── theme.js          # Paleta INK, MODES, LANGUAGES, AI_RULES
 ├── hooks/
-│   └── useInterval.js    # Hook useInterval
+│   ├── useInterval.js    # Hook useInterval
+│   └── useSpeechRecognition.js # Legendas ao vivo (Web Speech API)
 ├── utils/
 │   └── format.js         # fmt (formato de tempo)
 ├── services/
 │   └── ai.js             # callAI, translateWithAI, matchRule
 ├── components/
-│   ├── OrbitalRing.jsx   # Seletor de modos em arco
+│   ├── ModeBar.jsx       # Barra horizontal de modos
 │   ├── PulseShutter.jsx  # Botão de captura/gravação
 │   ├── ContextBloom.jsx  # Controles rápidos (flash, legendas, idioma)
 │   └── Scene.jsx         # Viewfinder por modo (doc, QR, translate, etc.)
 └── styles/
-    └── global.jsx        # Estilos injetados (fonte Sora, keyframes)
+    └── global.jsx        # Estilos injetados (fonte, keyframes)
 ```
 
 ## Requisitos
@@ -54,4 +60,4 @@ src/
 - Node.js (recomendado 18+)
 - npm ou yarn
 
-As chamadas de IA (Anthropic) falham sem API key; o app continua funcionando com respostas locais (regras em `AI_RULES`).
+As chamadas de IA externas (Anthropic) falham sem API key; o app continua funcionando com respostas locais (regras em `AI_RULES`).

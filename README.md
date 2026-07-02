@@ -1,16 +1,3 @@
-<div align="center">
-
-![Header](https://capsule-render.vercel.app/api?type=wave&color=ED1C24&height=130&section=header&text=Challenge+Jovi&fontSize=36&fontColor=ffffff)
-
-![FIAP](https://img.shields.io/badge/FIAP-2026-ED1C24?style=flat)
-![Challenge](https://img.shields.io/badge/Challenge-JoviLens-ED1C24?style=flat)
-![JavaScript](https://img.shields.io/badge/JavaScript-555?style=flat&logo=javascript)
-![MIT License](https://img.shields.io/badge/License-MIT-green?style=flat)
-
-</div>
-
----
-
 ## Sobre o Projeto
 
 O **JoviLens** é uma aplicação conceitual de câmera (UI) desenvolvida como parte do desafio acadêmico da FIAP. O projeto simula uma interface de câmera moderna, com estética autêntica inspirada nos sistemas iOS e Android, mas com identidade visual própria.
